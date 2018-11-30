@@ -1,6 +1,6 @@
 # Final Stand
 
-A wave-based defence game
+A wave-based defence game I made in high school.
 
 Features: various enemy types, lots of weapons, and power ups. 
 
