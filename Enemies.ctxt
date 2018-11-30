@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Enemies
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Enemies\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Enemies()
+comment10.params=
+comment10.target=boolean\ atBarrier()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ processes()
+comment4.params=
+comment4.target=void\ movement()
+comment5.params=
+comment5.target=void\ damage()
+comment6.params=
+comment6.target=void\ changeImages()
+comment7.params=
+comment7.target=boolean\ inWorld()
+comment8.params=version
+comment8.target=void\ deathSequence(int)
+comment9.params=
+comment9.target=int\ locateHero()
+numComments=11

@@ -1,0 +1,189 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\Java\jdk1.6.0_21\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-protected
+-source
+1.6
+-noindex
+-notree
+-nohelp
+-nonavbar
+-d
+E:\Documents\Programming\Final Stand\doc
+-classpath
+C:\Program Files (x86)\Greenfoot\lib\extensions\greenfoot.jar;C:\Program Files (x86)\Greenfoot\lib\bluejcore.jar;C:\Program Files (x86)\Greenfoot\lib\bluejeditor.jar;C:\Program Files (x86)\Greenfoot\lib\bluejext.jar;C:\Program Files (x86)\Greenfoot\lib\AppleJavaExtensions.jar;C:\Program Files (x86)\Greenfoot\lib\junit-4.8.2.jar;C:\Program Files (x86)\Greenfoot\lib\bluej.jar;C:\Program Files (x86)\Greenfoot\lib\commons-httpclient-3.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-logging-api-1.1.1.jar;C:\Program Files (x86)\Greenfoot\lib\commons-codec-1.3.jar;C:\Program Files (x86)\Greenfoot\lib\jl1.0.1.jar;E:\Documents\Programming\Final Stand
+E:\Documents\Programming\Final Stand\Hero.java
+<---- end of javadoc command ---->
+Loading source file E:\Documents\Programming\Final Stand\Hero.java...
+E:\Documents\Programming\Final Stand\Hero.java:602: illegal start of expression
+        }
+        ^
+E:\Documents\Programming\Final Stand\Hero.java:605: illegal start of expression
+    private void flash(int type)
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:605: illegal start of expression
+    private void flash(int type)
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:605: ';' expected
+    private void flash(int type)
+                      ^
+E:\Documents\Programming\Final Stand\Hero.java:605: ';' expected
+    private void flash(int type)
+                               ^
+E:\Documents\Programming\Final Stand\Hero.java:625: illegal start of expression
+    private void flashCheck(int weapon)
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:625: illegal start of expression
+    private void flashCheck(int weapon)
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:625: ';' expected
+    private void flashCheck(int weapon)
+                           ^
+E:\Documents\Programming\Final Stand\Hero.java:625: ';' expected
+    private void flashCheck(int weapon)
+                                      ^
+E:\Documents\Programming\Final Stand\Hero.java:637: illegal start of expression
+    private void reload()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:637: illegal start of expression
+    private void reload()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:637: ';' expected
+    private void reload()
+                       ^
+E:\Documents\Programming\Final Stand\Hero.java:667: illegal start of expression
+    private void shootBullet()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:667: illegal start of expression
+    private void shootBullet()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:667: ';' expected
+    private void shootBullet()
+                            ^
+E:\Documents\Programming\Final Stand\Hero.java:686: illegal start of expression
+    private void shootFlame()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:686: illegal start of expression
+    private void shootFlame()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:686: ';' expected
+    private void shootFlame()
+                           ^
+E:\Documents\Programming\Final Stand\Hero.java:707: illegal start of expression
+    private void shootRocket()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:707: illegal start of expression
+    private void shootRocket()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:707: ';' expected
+    private void shootRocket()
+                            ^
+E:\Documents\Programming\Final Stand\Hero.java:714: illegal start of expression
+    private void shootEnergy()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:714: illegal start of expression
+    private void shootEnergy()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:714: ';' expected
+    private void shootEnergy()
+                            ^
+E:\Documents\Programming\Final Stand\Hero.java:721: illegal start of expression
+    private void bulletSpread()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:721: illegal start of expression
+    private void bulletSpread()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:721: ';' expected
+    private void bulletSpread()
+                             ^
+E:\Documents\Programming\Final Stand\Hero.java:741: illegal start of expression
+    private void chooseSound()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:741: illegal start of expression
+    private void chooseSound()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:741: ';' expected
+    private void chooseSound()
+                            ^
+E:\Documents\Programming\Final Stand\Hero.java:805: illegal start of expression
+    private int getCaliber()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:805: ';' expected
+    private int getCaliber()
+                          ^
+E:\Documents\Programming\Final Stand\Hero.java:868: illegal start of expression
+    public void returnCaliber()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:868: illegal start of expression
+    public void returnCaliber()
+           ^
+E:\Documents\Programming\Final Stand\Hero.java:868: ';' expected
+    public void returnCaliber()
+                             ^
+E:\Documents\Programming\Final Stand\Hero.java:874: illegal start of expression
+    public int getPoints()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:874: ';' expected
+    public int getPoints()
+                        ^
+E:\Documents\Programming\Final Stand\Hero.java:879: illegal start of expression
+    public void increasePoints(int amt)
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:879: illegal start of expression
+    public void increasePoints(int amt)
+           ^
+E:\Documents\Programming\Final Stand\Hero.java:879: ';' expected
+    public void increasePoints(int amt)
+                              ^
+E:\Documents\Programming\Final Stand\Hero.java:879: ';' expected
+    public void increasePoints(int amt)
+                                      ^
+E:\Documents\Programming\Final Stand\Hero.java:884: illegal start of expression
+    public void decreasePoints(int amt)
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:884: illegal start of expression
+    public void decreasePoints(int amt)
+           ^
+E:\Documents\Programming\Final Stand\Hero.java:884: ';' expected
+    public void decreasePoints(int amt)
+                              ^
+E:\Documents\Programming\Final Stand\Hero.java:884: ';' expected
+    public void decreasePoints(int amt)
+                                      ^
+E:\Documents\Programming\Final Stand\Hero.java:889: illegal start of expression
+    public int getAmmo()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:889: ';' expected
+    public int getAmmo()
+                      ^
+E:\Documents\Programming\Final Stand\Hero.java:894: illegal start of expression
+    public String getWeaponInfo()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:894: ';' expected
+    public String getWeaponInfo()
+                               ^
+E:\Documents\Programming\Final Stand\Hero.java:901: illegal start of expression
+    private String checkCost(int cost)
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:901: ';' expected
+    private String checkCost(int cost)
+                            ^
+E:\Documents\Programming\Final Stand\Hero.java:901: ';' expected
+    private String checkCost(int cost)
+                                     ^
+E:\Documents\Programming\Final Stand\Hero.java:910: illegal start of expression
+    private void endGame()
+    ^
+E:\Documents\Programming\Final Stand\Hero.java:910: illegal start of expression
+    private void endGame()
+            ^
+E:\Documents\Programming\Final Stand\Hero.java:910: ';' expected
+    private void endGame()
+                        ^
+E:\Documents\Programming\Final Stand\Hero.java:915: reached end of file while parsing
+}
+ ^
+56 errors

@@ -1,0 +1,358 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class GameWorld here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class GameWorld extends World
+{
+    private Hero hero;
+    private Barrier barrier;
+    private GreenfootSound soundtrack = new GreenfootSound("soundtrack.wav");
+
+    private int[] commonSpawnRate;
+    private int[] commonSpawnTimer;
+    private int[] commonSpawnLimit;
+    private int[] commonCurrentSpawned;
+    private int[] bossSpawned;
+
+    public int caliber;
+    private int level;
+    private int pauseTimer;
+    private int kills;
+    public int points;
+    private int baseValue;
+    public int pts;
+    private boolean send;
+
+    private int bossLevel;
+    private int boss;
+
+    private int[] explosivesCosts;
+    private int[] hireCosts;
+    private int[] callCosts;
+    private int[] perkCosts;
+
+    private Display levelDisplay;
+    private Display killsDisplay;
+    private Display pointsDisplay;
+    private Display ammoDisplay;
+    private Display weaponDisplay;
+    private Display barrierDisplay;
+
+    private Icon explosivesIcon;
+    private Icon hireIcon;
+    private Icon callIcon;
+    private Icon perkIcon;
+    private Selector selector;
+
+    public GameWorld()
+    {    
+        super(800, 600, 1, false); 
+
+        setPaintOrder(Flash.class, Hero.class);
+
+        caliber = 0;
+        level = 1;
+        pauseTimer = 0;
+        kills = 0;
+        points = 0;
+        baseValue = 100;
+        pts = 0;
+        send = false;
+
+        bossLevel = 15;
+        boss = 0;
+
+        initializeArrays();
+        addAllObjects();
+    }
+
+    private void initializeArrays()
+    {
+        commonSpawnRate = new int[5];
+        commonSpawnTimer = new int[5];
+        commonSpawnLimit = new int[5];
+        commonCurrentSpawned = new int[5];
+        bossSpawned = new int[5];
+        initializeCSR();
+        commonSpawnLimit[0] = 10;
+
+        explosivesCosts = new int[3];
+        hireCosts = new int[3];
+        callCosts = new int[3];
+        perkCosts = new int[3];
+    }
+
+    private void initializeCSR()
+    {
+        for(int i=0;i<commonSpawnRate.length;i++)
+        {
+            commonSpawnRate[i] = Greenfoot.getRandomNumber(200)+100;
+        }
+    }
+
+    private void addAllObjects()
+    {
+        hero = new Hero();
+        addObject(hero, 700,460);
+
+        barrier = new Barrier();
+        addObject(barrier, 550,450);
+
+        addDisplays();
+        addIcons();
+    }
+
+    private void addDisplays()
+    {
+        levelDisplay = new Display("Level: 1");
+        addObject(levelDisplay, 150, 20);
+
+        killsDisplay = new Display("Kills: 0");
+        addObject(killsDisplay, 250, 20);
+
+        pointsDisplay = new Display("Points: 0");
+        addObject(pointsDisplay, 350, 20);
+
+        ammoDisplay = new Display("Ammo: 15");
+        addObject(ammoDisplay, 500, 20);
+
+        weaponDisplay = new Display("1: Pistol  DMG: 1  Upgrade Cost: 1000");
+        addObject(weaponDisplay, 600, 20);
+
+        barrierDisplay = new Display("Barrier Strength: 5000");
+        addObject(barrierDisplay, 150, 50);
+
+        barrierDisplay = new Display("Barrier Strength: 5000");
+        addObject(barrierDisplay, 150, 50);
+    }
+
+    private void addIcons()
+    {
+        explosivesIcon = new Icon(1);
+        addObject(explosivesIcon, 230, 70);
+
+        hireIcon = new Icon(2);
+        addObject(hireIcon, 330, 70);
+
+        callIcon = new Icon(3);
+        addObject(callIcon, 430, 70);
+
+        perkIcon = new Icon(4);
+        addObject(perkIcon, 530, 70);
+
+        selector = new Selector();
+        addObject(selector, -100, 300);
+    }
+
+    public void act()
+    {
+        soundtrack();
+        spawning();
+        displays();
+        icons();
+    }
+
+    private void soundtrack()
+    {
+        //soundtrack.play();
+    }
+
+    public int getCaliber()
+    {
+        return caliber;
+    }
+
+    private void spawning()
+    {
+        if(!isSpawnCompleted())
+        {
+            spawn(0);
+            if(level >= 10)
+            {
+                spawn(1);
+            }
+            if(level >= 20)
+            {
+                spawn(2);
+            }
+            if(level >= 30)
+            {
+                spawn(3);
+            }
+            if(level >= 40)
+            {
+                spawn(4);
+            }
+        }
+        if(isSpawnCompleted())
+        {
+            updateSpawning();
+        }
+    }
+
+    private void spawn(int enemy)
+    {
+        commonSpawnTimer[enemy]++;
+        if(commonSpawnTimer[enemy] >= commonSpawnRate[enemy])
+        {
+            int ranY = Greenfoot.getRandomNumber(300)+300;
+            addObject(new Enemy(enemy),-100,ranY);
+            commonCurrentSpawned[enemy]++;
+            commonSpawnRate[enemy] = Greenfoot.getRandomNumber(200)+100;
+            commonSpawnTimer[enemy] = 0;
+        }
+    }
+
+    private boolean isSpawnCompleted()
+    {
+        for(int i=0;i<commonSpawnLimit.length;i++)
+        {
+            if(commonCurrentSpawned[i] > commonSpawnLimit[i])
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void updateSpawning()
+    {
+        pauseTimer++;
+        if(pauseTimer >= 1000)
+        {
+            commonSpawnLimit[0] += 10;
+            commonCurrentSpawned[0] = 0;
+            if(level >= 10)
+            {
+                commonSpawnLimit[1] += 10;
+                commonCurrentSpawned[1] = 0;
+            }
+            if(level >= 20)
+            {
+                commonSpawnLimit[2] += 10;
+                commonCurrentSpawned[2] = 0;
+            }
+            if(level >= 30)
+            {
+                commonSpawnLimit[3] += 10;
+                commonCurrentSpawned[3] = 0;
+            }
+            if(level >= 40)
+            {
+                commonSpawnLimit[4] += 10;
+                commonCurrentSpawned[4] = 0;
+            }
+            bossCheck();
+            level++;
+            increasePoints(baseValue);
+            baseValue += 100;
+            pauseTimer = 0;
+        }
+    }
+
+    private void bossCheck()
+    {
+        if(boss < 4)
+        {
+            if(level == bossLevel)
+            {
+                if(bossSpawned[boss] == 0)
+                {
+                    addObject(new Boss(boss),-100,getHeight()/2);
+                    bossSpawned[boss] = 1;
+                    boss++;
+                    bossLevel += 10;
+                }
+            }
+        }
+        if(level == 50)
+        {
+            if(bossSpawned[4] == 0)
+            {
+                addObject(new Boss(4),-100,getHeight()/2);
+                bossSpawned[4] = 1;
+            }
+        }
+    }
+
+    public void increaseKills()
+    {
+        kills++;
+    }
+
+    public void increasePoints(int amt)
+    {
+        hero.increasePoints(amt);
+    }
+
+    private void displays()
+    {
+        levelDisplay.setValue("Level: " + level);
+        killsDisplay.setValue("Kills: " + kills);
+        pointsDisplay.setValue("Points: " + hero.getPoints());
+        if(hero.getAmmo() != 0)
+        {
+            ammoDisplay.setValue("Ammo: " + hero.getAmmo());
+        }
+        else
+        {
+            ammoDisplay.setValue("RELOADING");
+        }
+        weaponDisplay.setValue(hero.getWeaponInfo());
+        barrierDisplay.setValue("Barrier Strength: " + barrier.getStrength());
+    }
+
+    private void icons()
+    {
+        changeSelection();
+        addSelection();
+    }
+
+    private void changeSelection()
+    {
+        if(Greenfoot.mouseClicked(explosivesIcon))
+        {
+            explosivesIcon.upImage();
+        }
+        if(Greenfoot.mouseClicked(hireIcon))
+        {
+            hireIcon.upImage();
+        }
+        if(Greenfoot.mouseClicked(callIcon))
+        {
+            callIcon.upImage();
+        }
+        if(Greenfoot.mouseClicked(perkIcon))
+        {
+            perkIcon.upImage();
+        }   
+    }
+
+    private void addSelection()
+    {
+        if(Greenfoot.mouseDragged(explosivesIcon))
+        {
+            selector.selected = true;
+            selector.boundaries(1);
+        }
+        if(Greenfoot.mouseDragged(hireIcon))
+        {
+            selector.selected = true;
+            selector.boundaries(2);
+        }
+        if(Greenfoot.mouseDragged(callIcon))
+        {
+            selector.selected = true;
+            selector.boundaries(3);
+        }
+        if(Greenfoot.mouseDragged(perkIcon))
+        {
+            selector.selected = true;
+            selector.boundaries(4);
+        }
+    }
+}

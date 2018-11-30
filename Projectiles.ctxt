@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=Projectiles
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Projectiles\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=Projectiles()
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Act\ -\ do\ whatever\ the\ Projectiles\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment3.params=
+comment3.target=void\ movement()
+comment4.params=version\ type
+comment4.target=void\ collisions(int,\ int)
+comment5.params=type\ rocketType
+comment5.target=void\ explode(int,\ int)
+comment6.params=fire
+comment6.target=void\ explosion(int)
+comment7.params=
+comment7.target=void\ superConduct()
+comment8.params=
+comment8.target=void\ emplosion()
+comment9.params=
+comment9.target=void\ die()
+numComments=10

@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Strike
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Strike\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=type\ location
+comment1.target=Strike(int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ types()
+comment4.params=
+comment4.target=void\ drop()
+comment5.params=
+comment5.target=void\ fall()
+comment6.params=
+comment6.target=void\ explode()
+numComments=7
